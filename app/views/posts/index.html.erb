@@ -1,0 +1,14 @@
+<h2> ღ Meow ღ </h2>
+<ul>
+<p><%= link_to "Write Something New", posts_new_url %></p>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      
+      <%= link_to post.title, "/posts/#{post.id}",  :method => 'get' %>
+    
+      <%= link_to "(delete)", post_url(post.id), :method => 'delete' %>
+    </li>
+  <% end %>
+
+</ul>
