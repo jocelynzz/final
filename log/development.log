@@ -2924,3 +2924,325 @@ Processing by PostsController#index as HTML
   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
   Rendered posts/index.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (1.6ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("userID", "name", "password", "photo_url", "intro") VALUES (?, ?, ?, ?, ?)[0m  [["userID", 1], ["name", "adminMeow"], ["password", "meowmeow"], ["photo_url", "http://cutewallpaperss.com/wp-content/uploads/2015/01/cute_cats__cats_picture_cute_wallpaperss_hd_for_mobile.jpg"], ["intro", "Welcome, >'.'<"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("userID", "postID", "title", "body") VALUES (?, ?, ?, ?)  [["userID", 1], ["postID", 1], ["title", "10 Reasons Cats Meow?"], ["body", "Reference: https://www.petfinder.com/cats/cat-behavior-and-training/why-cats-meow/\n\t\t\t1) I am getting older\n\t\t\t2) I don't want to be alone\n\t\t\t3) I am ticked off.\n\t\t\t4) I am stressed.\n\t\t\t5) I am in heat.\n\t\t\t6) Let me in.\n\t\t\t7) Pay attention to me.\n\t\t\t8) I want food.\n\t\t\t9) I am saying 'hi'\n\t\t\t10) I am hurt.\n\t\t\t"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-05-07 16:00:47 -0500
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/controllers/posts_controller.rb:54: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/posts_controller.rb:54: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (66.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (140.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-07 16:01:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (3.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 286ms (Views: 243.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-07 16:01:15 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:01:19 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"D2ZYF5Usy2lVTCqGsYTLrqrPuUUQpeq83IEyBVWFXiA38UNmV8J2CcSA5sYEuFDZJKQ0Exr/YF1/FX7+0HIBIw==", "id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 63ms (Views: 47.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2015-05-07 16:01:21 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/4" for ::1 at 2015-05-07 16:01:27 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B2vFzXTlVl3p0HRMJF3pBkVDfBFcs48ym8RI1riu248//N68tgvrPXgcuAyRYXJxyyjxR1bpBdM4UAQtPVmEjA==", "title"=>"10 Reasons Cats Meow?", "body"=>"Reference: https://www.petfinder.com/cats/cat-behavior-and-training/why-cats-meow/\r\n\t\t\t1) I am getting older\r\n\t\t\t2) I don't want to be alone\r\n\t\t\t3) I am ticked off.\r\n\t\t\t4) I am stressed.\r\n\t\t\t5) I am in heat.\r\n\t\t\t6) Let me in.\r\n\t\t\t7) Pay attention to me.\r\n\t\t\t8) I want food.\r\n\t\t\t9) I am saying 'hi'\r\n\t\t\t10) I am hurt.\r\n\t\t\t11) hi", "id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "posts" SET "postID" = ?, "body" = ?, "userID" = ? WHERE "posts"."id" = ?  [["postID", nil], ["body", "Reference: https://www.petfinder.com/cats/cat-behavior-and-training/why-cats-meow/\r\n\t\t\t1) I am getting older\r\n\t\t\t2) I don't want to be alone\r\n\t\t\t3) I am ticked off.\r\n\t\t\t4) I am stressed.\r\n\t\t\t5) I am in heat.\r\n\t\t\t6) Let me in.\r\n\t\t\t7) Pay attention to me.\r\n\t\t\t8) I want food.\r\n\t\t\t9) I am saying 'hi'\r\n\t\t\t10) I am hurt.\r\n\t\t\t11) hi"], ["userID", nil], ["id", 4]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3003/posts/4
+Completed 302 Found in 14ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:01:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:05:19 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `edit_post_url' for #<#<Class:0x007f9ffc3c0ef8>:0x007f9ffe5d6358>):
+    1: <h2><%= @post.title %></h2>
+    2: <%= link_to "Edit", edit_post_url(@post.id) %></td>
+    3: <p><%= @post.body %></p>
+    4: 
+    5: <p>Comment</p>
+  app/views/posts/show.html.erb:2:in `_app_views_posts_show_html_erb__3158278652528434169_70162572028060'
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (56.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (124.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:07:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (80.8ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `posts_edit_url' for #<#<Class:0x007f9ffc3c0ef8>:0x007f9ffc7975b8>):
+    1: <h2><%= @post.title %></h2>
+    2: <%= link_to "Edit", posts_edit_url(@post.id) %></td>
+    3: <p><%= @post.body %></p>
+    4: 
+    5: <p>Comment</p>
+  app/views/posts/show.html.erb:2:in `_app_views_posts_show_html_erb__3158278652528434169_70162556139100'
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (51.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (122.4ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:09:02 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `edit_post_url' for #<#<Class:0x007f9ffc3c0ef8>:0x007f9ff9ef3f80>):
+    1: <h2><%= @post.title %></h2>
+    2: <%= link_to "Edit", edit_post_url(@post.id) %></td>
+    3: <p><%= @post.body %></p>
+    4: 
+    5: <p>Comment</p>
+  app/views/posts/show.html.erb:2:in `_app_views_posts_show_html_erb__3158278652528434169_70162534864540'
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (64.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (135.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-07 16:11:20 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 103ms (Views: 94.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:11:22 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"2YVtywwdJWSsqiLM7QxXeSjNyZvGN9ecIVB1lTtlAfDhEna6zvOYBD1m7oxYMMwOpqZEzcxtXX2CxDluvpJe8w==", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (27.7ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `edit_post_url' for #<#<Class:0x007f9ffc3c0ef8>:0x007fa0000026a0>):
+    1: <h2><%= @post.title %></h2>
+    2: <%= link_to "Edit", edit_post_url(@post.id) %></td>
+    3: <p><%= @post.body %></p>
+    4: 
+    5: <p>Comment</p>
+  app/views/posts/show.html.erb:2:in `_app_views_posts_show_html_erb__3158278652528434169_70162534864540'
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (59.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (141.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:16:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (1.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (76.9ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined method `posts_edit_url' for #<#<Class:0x007f9ffc3c0ef8>:0x007f9ff9206868>):
+    1: <h2><%= @post.title %></h2>
+    2: <%= link_to "Edit", posts_edit_url(@post.id) %></td>
+    3: <p><%= @post.body %></p>
+    4: 
+    5: <p>Comment</p>
+  app/views/posts/show.html.erb:2:in `_app_views_posts_show_html_erb__3158278652528434169_70162528058520'
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (128.5ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:23:22 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 147ms (Views: 104.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2015-05-07 16:23:25 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-07 16:23:30 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-07 16:23:57 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-07 16:24:00 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-07 16:24:01 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-07 16:25:15 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:25:18 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"74aGDoXDcy/gXu+hvHVqTL61Qb9tnHLNWxK2KRz08SbXEZ1/Ry3OT3GSI+EJSfE7MN7M6WfG+Cz4hvrSmQOuJQ==", "id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2015-05-07 16:25:20 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:25:21 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"fiiEmbWzUb0qbY9rOJz+5UW0FYob5oM8GV7WV8PkTVhGv5/od13s3buhQyuNoGWSy9+Y3BG8Cd26ypqsRhMSWw==", "id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-05-07 16:25:35 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2015-05-07 16:25:37 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.2ms)
