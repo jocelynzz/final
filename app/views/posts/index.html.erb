@@ -3,11 +3,9 @@
 <p><%= link_to "Write Something New", new_post_url %></p>
 <ul>
   <% @posts.each do |post| %>
-    <li>
-      
-      <%= link_to post.title, post_url(post.id),  :method => 'get' %>
-    
-      <%= link_to "(delete)", post_url(post.id), :method => 'delete' %>
+    <li>    
+      <%= link_to post.title, post_url(post.id),  :method => 'get' %>   
+      <%= link_to "(delete)", post_url(post.id), :method => 'delete' %>     
     </li>
   <% end %>
 
