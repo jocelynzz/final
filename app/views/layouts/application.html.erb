@@ -2,12 +2,39 @@
 <html>
 <head>
   <title>Final</title>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <% if notice.present? %>
+      <div class="alert alert-info"%>
+        <%= notice %>
+      </div>
+    <% end %>
+    
+    <nav class="navbar navbar-default">
+		<div class="navbar-collapse collapse">
+		
+	    <% if cookies["user_id"].present? %>
+		    <%= link_to ("Howdy, "+User.find_by(id: cookies["user_id"]).email), '#', :class => "navbar-brand" %>
+			<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+	        <li><%= link_to "Sign Out", '/signout'%><li>
+	    <% else %>
+		    <%= link_to "MEOW", '#', :class => "navbar-brand" %>
+			<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+        	<li><%= link_to "Sign Up", '/signup' %></li>
+        	<li><%= link_to "Sign In", '/login' %></li>
+		<% end %>
+		</ul>
+	</div>
+		
+	</nav>
 
+    
 <%= yield %>
 
 </body>

@@ -1,11 +1,37 @@
 <h2><%= @post.title %></h2>
+<h6><%= @post.date %></h6>
 
 <%= link_to "Edit", edit_post_url(@post.id) %></td>
 <%= link_to "Back", posts_url %></td>
 
 <p><%= @post.body %></p>
 
-<p>Comment</p>
+<%= form_tag "/categories", :method => 'post' do %> 
+  <label>Category:</label><input name="category_id" size="50">
+  <input type="hidden" name="post_id" value="<%= @post.id %>">
+  <button>Add</button>
+<% end %>
 
+<h3 style="clear:both; margin-top: 100px">Comments</h3>
+
+<p>Write a Comment</p>
+
+ <%= form_tag "/comments", :method => 'post' do %> 
+  <input name="comment" placeholder="Add a Comment" size="50">
+  <input type="hidden" name="user_id" value="<%= cookies["user_id"] %>">
+  <input type="hidden" name="post_id" value="<%= @post.id %>">
+  <button>Submit</button>
+<% end %>
+
+<p>Comments</p>
+<% Comment.where(post_id: @post.id).order('date').each do |comment| %>
+  <p>
+  	<%= comment.user_id %>
+	<%= comment.date %>
+    <%= comment.comment %>
+  </p>
+<% end %>
+
+<p></p>
 
 

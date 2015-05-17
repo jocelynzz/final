@@ -13,30 +13,51 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "comments", force: :cascade do |t|
-    t.integer "userID"
-    t.integer "postID"
-    t.text    "comment"
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "date"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "mappings", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "post_id"
+  end
+
+  add_index "mappings", ["category_id"], name: "index_mappings_on_category_id"
+  add_index "mappings", ["post_id"], name: "index_mappings_on_post_id"
 
   create_table "posts", force: :cascade do |t|
-    t.integer "userID"
-    t.integer "postID"
-    t.string  "title"
-    t.text    "body"
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "date"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "relations", force: :cascade do |t|
-    t.integer "follower"
-    t.integer "following"
+    t.integer "follower_id"
+    t.integer "following_id"
   end
 
+  add_index "relations", ["follower_id"], name: "index_relations_on_follower_id"
+  add_index "relations", ["following_id"], name: "index_relations_on_following_id"
+
   create_table "users", force: :cascade do |t|
-    t.integer "userID"
-    t.string  "name"
-    t.string  "password"
-    t.text    "photo_url"
-    t.text    "intro"
+    t.string "password"
+    t.text   "photo_url"
+    t.text   "intro"
+    t.string "user_name"
+    t.string "email"
   end
 
 end

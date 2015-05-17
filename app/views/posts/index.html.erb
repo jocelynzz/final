@@ -1,10 +1,14 @@
 <h2> ღ Meow ღ </h2>
-<ul>
+
+<small><%= link_to "Sign Up", '/signup' %></small>
+<small><%= link_to "Sign In", '/login' %></small>
+
 <p><%= link_to "Write Something New", new_post_url %></p>
-<ul>
+
   <% @posts.each do |post| %>
     <li>    
       <%= link_to post.title, post_url(post.id),  :method => 'get' %>   
+      <%= post.date %>
       <%= link_to "(delete)", post_url(post.id), :method => 'delete' %>     
     </li>
   <% end %>

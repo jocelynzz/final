@@ -2,7 +2,11 @@
 
 <%= form_tag "/posts/#{@post.id}", :method => 'patch' do %>
 
-  <p><label>Title:</label> <input value="<%= @post.title %>" name="title" size="30"></p>
+  <p>
+  <label>Title:</label> <input value="<%= @post.title %>" name="title" size="30">
+  <label>Date:</label> <input value="<%= Time.now %>" name="date">
+  </p>
+  
   <textarea name="body" cols="100" rows="100"><%= @post.body %></textarea>
   
   <p><button>Submit</button></p>

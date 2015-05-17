@@ -1,26 +1,33 @@
 Post
-    userID: integer
-    postID: integer
+    user_id: integer
     title: string
-  #  date: timestamp
+    date: timestamp
     body: text
     
 User
-    userID: integer
-    name: string
+    user_name: string
     password: string
+    email: string
     photo_url: text
     intro: text
 
 Comment
-    userID: integer
-    postID: integer
-   # date: timestamp
+    user_id: integer
+    post_id: integer
+    date: timestamp
     comment: text
 
 Relation
-    follower: integer
-    following: integer
+    follower_id: integer
+    following_id: integer
+
+Mapping
+    category_id: integer
+    post_id: integer
+
+Category
+    category_name: string
+    
 
 
 # Example table for a typical Book model.
