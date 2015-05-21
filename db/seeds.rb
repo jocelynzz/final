@@ -6,25 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Post.delete_all
 User.delete_all
-Mapping.delete_all
+Category.delete_all
 
-User.create user_id: 1,
-			name: "adminMeow", 
+User.create user_name: "adminMeow", 
 			password: "meowmeow",
+			email: "admin@wordpress.com",
 			photo_url: "http://cutewallpaperss.com/wp-content/uploads/2015/01/cute_cats__cats_picture_cute_wallpaperss_hd_for_mobile.jpg",
 			intro: "Welcome, >'.'<"
 
-Mapping.create category_name: "catlitter"
-Mapping.create category_name: "catfood"
-Mapping.create category_name: "mycat"
-Mapping.create category_name: "kitties"
-Mapping.create category_name: "stories"
-Mapping.create category_name: "spay"
-Mapping.create category_name: "cuteness"
-Mapping.create category_name: "questions"
-Mapping.create category_name: "misc"
+Category.create category_name: "catlitter"
+Category.create category_name: "catfood"
+Category.create category_name: "mycat"
+Category.create category_name: "kitties"
+Category.create category_name: "stories"
+Category.create category_name: "spay"
+Category.create category_name: "cuteness"
+Category.create category_name: "questions"
+Category.create category_name: "misc"
 
 
 #     

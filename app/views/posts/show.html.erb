@@ -1,37 +1,80 @@
-<h2><%= @post.title %></h2>
-<h6><%= @post.date %></h6>
+<div class="well">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-7"></div>
+		<div class="col-md-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+			<% if cookies["user_id"].present? %>
+				<p>
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+					<span class="glyphicon-class"><%= link_to "Edit", edit_post_url(@post.id) %></span>
+				</p>
+			<% end %>
+			<p>
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+				<span class="glyphicon-class"><%= link_to "Back", posts_url %></span>
+			</p>
+		</div>
+		<div class="col-md-7">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= link_to @post.title, post_url(@post.id),  :method => 'get' %><h6><%= @post.date %></h6></h3>
+					<h5><p><%= link_to "(delete)", post_url(@post.id), :method => 'delete' %></p></h5>
+				</div>
+				<div class="panel-body"><%= @post.body %></div>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	
+<ul>
+ <% @post.categories.pluck(:category_name).each do |category| %>
+ 	<%= category %> 
+ <% end %>
+</ul>
 
-<%= link_to "Edit", edit_post_url(@post.id) %></td>
-<%= link_to "Back", posts_url %></td>
-
-<p><%= @post.body %></p>
-
-<%= form_tag "/categories", :method => 'post' do %> 
-  <label>Category:</label><input name="category_id" size="50">
-  <input type="hidden" name="post_id" value="<%= @post.id %>">
-  <button>Add</button>
+<% if cookies["user_id"].to_i.equal?(@post.user_id) %>	
+	<ul>
+ 		<%= form_tag "/mappings", :method => 'post' do %>
+		<% Category.all.each do |category| %>
+		<!--<input type="checkbox" name="category_id" value= "<%= category.id %>"><%= category.category_name %>-->
+			<%= check_box_tag 'category_ids[]', category.id -%><%= category.category_name %>
+			<input type="hidden" name="post_id" value="<%= @post.id %>">
+		<% end %>
+		<button>Add Categories</button>
+ 	<% end %> 
+	</ul>
 <% end %>
 
 <h3 style="clear:both; margin-top: 100px">Comments</h3>
 
 <p>Write a Comment</p>
 
- <%= form_tag "/comments", :method => 'post' do %> 
-  <input name="comment" placeholder="Add a Comment" size="50">
-  <input type="hidden" name="user_id" value="<%= cookies["user_id"] %>">
+ <%= form_tag "/comments", :method => 'post' do %>
+  <input name="body" placeholder="Add a Comment" size="50">
+  <input type="hidden" name="user_id" value="<%= @user_id %>">
   <input type="hidden" name="post_id" value="<%= @post.id %>">
   <button>Submit</button>
 <% end %>
 
-<p>Comments</p>
-<% Comment.where(post_id: @post.id).order('date').each do |comment| %>
-  <p>
-  	<%= comment.user_id %>
-	<%= comment.date %>
-    <%= comment.comment %>
-  </p>
-<% end %>
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-7">
+		<p>Comments</p>
+		<ul class="list-group">
+			<% Comment.where(post_id: @post.id).order('date').each do |comment| %>
+			    <li href="#" class="list-group-item">
+					<h4 class="list-group-item-heading"><%= User.where(:id=>comment.user_id).pluck("user_name")[0] %></h4>
+					<h6 class="list-group-item-heading"><%= comment.date %></h6>
+					<p class="list-group-item-text"><%= comment.body %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="col-md-4"></div>
+</div>
 
+</div>
 <p></p>
-
-

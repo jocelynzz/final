@@ -14,7 +14,7 @@
  *= require_self
  */
  
- +.errors {
-+  color: red;
-+  font-weight: bold;
-+}
+.errors {
+  color: red;
+  font-weight: bold;
+}

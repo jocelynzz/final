@@ -2,6 +2,11 @@
 <html>
 <head>
   <title>Final</title>
+  <style>
+  body {
+	  padding-top: 45px;
+  } 
+  </style>
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,28 +19,29 @@
       </div>
     <% end %>
     
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-collapse collapse">
-		
 	    <% if cookies["user_id"].present? %>
-		    <%= link_to ("Howdy, "+User.find_by(id: cookies["user_id"]).email), '#', :class => "navbar-brand" %>
-			<div class="navbar-collapse collapse">
+		    <a class="navbar-brand" href="/">
+		        <%= image_tag("cat.png", :alt => "Brand")%>
+				<%= link_to ("Welcome, " + User.find_by(id: cookies["user_id"]).email), '/', :class => "navbar-brand" %>
+		    </a>
+			<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">
-	        <li><%= link_to "Sign Out", '/signout'%><li>
+				<%= link_to "Sign Out", '/signout', :class => "btn btn-default navbar-btn"%>
 	    <% else %>
-		    <%= link_to "MEOW", '#', :class => "navbar-brand" %>
-			<div class="navbar-collapse collapse">
+		    <a class="navbar-brand" href="/">
+		        <%= image_tag("cat.png", :alt => "Brand")%>
+				<%= link_to "MEOW Blog", '/', :class => "navbar-brand" %>
+		    </a>
+			<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">
-        	<li><%= link_to "Sign Up", '/signup' %></li>
-        	<li><%= link_to "Sign In", '/login' %></li>
+				<%= link_to "Sign Up", '/signup', :class => "btn btn-default navbar-btn"%>
+				<%= link_to link_to "Sign In", '/login', :class => "btn btn-default navbar-btn"%>
 		<% end %>
-		</ul>
-	</div>
-		
+			</ul>
+		</div>	
 	</nav>
-
-    
 <%= yield %>
-
 </body>
 </html>

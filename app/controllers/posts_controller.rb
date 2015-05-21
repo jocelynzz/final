@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
  def show
  	cookies["post_id"] = @post.id
+ 	@user_id = cookies["user_id"] 
 	if @post == nil
 		redirect to posts_url
 	end
@@ -20,13 +21,14 @@ class PostsController < ApplicationController
 
  def new
  	@post = Post.new
+ 	@user_id = cookies["user_id"]
  end
 
  def create
  	@post = Post.new
-	@post.user_id = params[:user_id],
-	@post.title = params[:title],
-	@post.date = Time.now,
+	@post.user_id = cookies["user_id"]
+	@post.title = params[:title]
+	@post.date = Time.now
 	@post.body = params[:body]
 	
 	if @post.save

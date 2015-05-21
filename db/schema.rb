@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "comment"
     t.integer  "user_id"
     t.integer  "post_id"
     t.datetime "date"
+    t.text     "body"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "password"
     t.text   "photo_url"
     t.text   "intro"
-    t.string "user_name"
     t.string "email"
+    t.string "user_name"
   end
 
 end
