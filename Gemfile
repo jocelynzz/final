@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'sprockets', '3.1.0'
+gem 'tinymce-rails', :git => "git@github.com:spohlenz/tinymce-rails.git"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
@@ -14,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'quiet_assets'
 gem 'ez'
 gem 'bcrypt'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

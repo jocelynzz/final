@@ -22,8 +22,7 @@
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">
-						
+					<h3 class="panel-title">						
 						<span class="glyphicons glyphicons-cat"></span>
 						<%= link_to post.title, post_url(post.id),  :method => 'get' %>
 						<h6><%= User.where(:id=>post.user_id).pluck("user_name")[0] %></h6>
@@ -32,9 +31,9 @@
 						<h5><p><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>					
 						<span class="glyphicon-class"><%= link_to "(delete)", post_url(post.id), :method => 'delete' %></span></p></h5>
 					<% end %>
-			<!--</div>
-				<div class="panel-body"><%= post.body %></div>
-			</div> -->
+			</div>
+				<!--<div class="panel-body"><%= post.body %></div>-->
+			</div> 
 		</div>
 		<div class="col-md-4"></div>
 	</div>

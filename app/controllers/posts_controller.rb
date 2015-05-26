@@ -3,7 +3,6 @@ class PostsController < ApplicationController
  before_action :find_post, :only => [:show, :edit, :update, :destroy]
  before_action :require_user, :only => [:new, :edit, :update, :edit, :destroy]
  
-
  def find_post
  	@post = Post.find_by(id: params[:id])
  end

@@ -1,14 +1,12 @@
+<%= tinymce_assets %>
 <%= form_tag "/posts" do %>
-
   <p>
   <label>Title:</label> <input name="title" size=30>
   <label>Date:</label> <%= Time.now %>
   </p>
-    
-  <textarea name="body" cols="80" rows="100"></textarea>
-  <!--<% simple_format('body') %>-->
-  
+  	<%= tinymce %>
+  	<%= text_area_tag :body, "", :class => "tinymce", :rows => 100, :cols => 80 %>
+  	
   <p><button>Submit</button></p>
   
 <% end %>
-

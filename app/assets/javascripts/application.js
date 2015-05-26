@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//= require tinymce
+
+tinyMCE.init({
+  mode: 'textareas',
+  theme: 'advanced'
+});
