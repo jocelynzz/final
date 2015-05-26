@@ -21,10 +21,10 @@
     
     <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-collapse collapse">
-	    <% if cookies["user_id"].present? %>
+	    <% if session["user_id"].present? %>
 		    <a class="navbar-brand" href="/">
 		        <%= image_tag("cat.png", :alt => "Brand")%>
-				<%= link_to ("Welcome, " + User.find_by(id: cookies["user_id"]).email), '/', :class => "navbar-brand" %>
+				<%= link_to ("Welcome, " + User.find_by(id: session["user_id"]).user_name), '/', :class => "navbar-brand" %>
 		    </a>
 			<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  def new
+  before_action :authorize, only: [:show]
+    def new
     @user = User.new
   end
 
@@ -11,4 +12,15 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+  
+  def authorize
+   @user = User.find_by(id: params[:id])
+   if session[:user_id].blank? || sesssio[:user_id] != @user.id
+   		redirect_to root_url, notice: "Nice try!"
+   end   
+  end
+  
+  def show
+  end
+  			
 end

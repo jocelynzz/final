@@ -6,7 +6,7 @@ Post
     
 User
     user_name: string
-    password: string
+    password_digest: string
     email: string
     photo_url: text
     intro: text

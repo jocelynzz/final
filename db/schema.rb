@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "relations", ["following_id"], name: "index_relations_on_following_id"
 
   create_table "users", force: :cascade do |t|
-    t.string "password"
     t.text   "photo_url"
     t.text   "intro"
     t.string "email"
     t.string "user_name"
+    t.string "password_digest"
   end
 
 end
