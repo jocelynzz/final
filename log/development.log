@@ -11558,3 +11558,374 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (8.7ms)
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
 Completed 200 OK in 131ms (Views: 129.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-26 15:26:05 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (13.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.6ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (90.1ms)
+  [1m[35mUser Load (11.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 998ms (Views: 942.3ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-26 15:26:19 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (7.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.5ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (41.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 359ms (Views: 331.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-26 15:26:20 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 195ms (Views: 193.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 15:26:30 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"A7yf785aZUzwN7yEtdQxlw6NoRBoAMvNPka7e1Vci6XzOHlezCGsk8ce9GcE/jTKdOxFvSz7cFV9HTmNAn5Luw==", "id"=>"13"}
+  [1m[36mPost Load (1.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (93.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 336ms (Views: 301.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/13/edit" for ::1 at 2015-05-26 15:26:35 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered posts/edit.html.erb within layouts/application (70.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 287ms (Views: 281.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/13/edit" for ::1 at 2015-05-26 15:26:42 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered posts/edit.html.erb within layouts/application (42.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 177ms (Views: 169.2ms | ActiveRecord: 0.7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13/edit" for ::1 at 2015-05-26 15:27:21 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered posts/edit.html.erb within layouts/application (107.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 343ms (Views: 322.3ms | ActiveRecord: 2.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/" for ::1 at 2015-05-26 15:27:54 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.5ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.4ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (27.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 325ms (Views: 311.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-26 15:27:56 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (38.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 368ms (Views: 365.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-26 15:27:59 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (33.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 154ms (Views: 152.7ms | ActiveRecord: 0.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/" for ::1 at 2015-05-26 15:29:59 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (34.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 308ms (Views: 287.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 15:30:05 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"Fvw38a73tWG1MZCVs3sWv6LmR21ncPL4unyMOzaQnyXmeNFArIx8voIY2HYCURPi2IejwCOLSWD5Jw7NYbJfOw==", "id"=>"13"}
+  [1m[35mPost Load (1.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (1.8ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (103.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 455ms (Views: 422.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-26 15:30:09 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (17.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 222ms (Views: 209.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-26 15:30:11 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (43.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 254ms (Views: 252.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-26 15:31:10 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (82.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 320ms (Views: 303.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-26 15:31:32 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (88.8ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 427ms (Views: 411.1ms | ActiveRecord: 0.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/" for ::1 at 2015-05-26 15:31:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.3ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (43.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 599ms (Views: 561.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 15:31:44 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"uiRMcPCh4gktFTEygv+I4VSSNrh5GBdJon+8AtBgdfxKoKrB8tor1ho8edEz1Y28LvPSFT3jrNHhJD70h0K14g==", "id"=>"13"}
+  [1m[35mPost Load (1.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (75.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 267ms (Views: 241.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/13/edit" for ::1 at 2015-05-26 15:31:46 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered posts/edit.html.erb within layouts/application (47.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 252ms (Views: 249.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/13/edit" for ::1 at 2015-05-26 15:31:48 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered posts/edit.html.erb within layouts/application (45.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 162ms (Views: 159.2ms | ActiveRecord: 0.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13/edit" for ::1 at 2015-05-26 15:32:10 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (2.9ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered posts/edit.html.erb within layouts/application (114.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 332ms (Views: 304.1ms | ActiveRecord: 3.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/" for ::1 at 2015-05-26 15:32:17 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.7ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (63.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 479ms (Views: 469.0ms | ActiveRecord: 2.1ms)

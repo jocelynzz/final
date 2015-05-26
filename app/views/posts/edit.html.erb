@@ -1,6 +1,5 @@
-<h2>Edit Your Post</h2>
+<br></br>
 <%= tinymce_assets %>
-
 <%= form_tag "/posts/#{@post.id}", :method => 'patch' do %>
 
   <p>
@@ -8,8 +7,7 @@
   <label>Date:</label> <input value="<%= Time.now %>" name="date">
   </p>
   <%= tinymce %>
-  <%= text_area_tag :body, @post.body, :class => "tinymce", :rows => 100, :cols => 80 %>
-  <!--<textarea name="body" cols="100" rows="100"><%= @post.body %></textarea>-->
+  <%= text_area_tag :body, simple_format(@post.body), :class => "tinymce", :rows => 100, :cols => 80 %>
   
   <p><button>Submit</button></p>
 <% end %>
