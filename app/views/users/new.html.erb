@@ -7,12 +7,16 @@
   </ul>
 <% end %>
 
-<%= form_tag "/users" do %>
+<%= form_tag "/users", multipart: true do %>
 
  <p>
     <%= label_tag :name %>
     <%= text_field_tag :name %>
  </p>
+ 
+ <!--<p>
+ 	<%= file_field_tag :photo
+ </p>-->
   
  <p>
     <%= label_tag :email %>
@@ -23,6 +27,7 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %>
  </p>
+ 
 
   <%= submit_tag "Sign Me Up!" %>
 <% end %>

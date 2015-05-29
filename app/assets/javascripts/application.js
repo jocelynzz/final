@@ -19,5 +19,5 @@
 
 tinyMCE.init({
   mode: 'textareas',
-  theme: 'advanced'
+  theme: 'advanced',
 });

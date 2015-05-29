@@ -5,9 +5,8 @@
   <label>Title:</label> <input name="title" size=30>
   <label>Date:</label> <%= Time.now %>
   </p>
-  	<%= tinymce %>
-  	<%= text_area_tag :body, "", :class => "tinymce", :rows => 100, :cols => 80 %>
-  	
+  	<%= text_area_tag :body, "", :class => "tinymce", :rows => 70, :cols => 80 %>
+    <%= tinymce %>
   <p><button>Submit</button></p>
   
 <% end %>

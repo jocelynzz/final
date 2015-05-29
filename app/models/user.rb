@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :comments
+  has_many :comments, :dependent => :delete_all
   
   has_secure_password
   

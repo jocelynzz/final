@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
+
   before_action :authorize, only: [:show]
-    def new
+  
+  def new
     @user = User.new
   end
 
   def create
+  #@user = User.new(params) #mass assignment is a bad practice in terms of security
+  	#file_contents = params[:photo].read
+  	
     @user = User.new(user_name: params[:name], email: params[:email], password: params[:password])
     if @user.save
       redirect_to root_url, notice: "Thanks for signing up."

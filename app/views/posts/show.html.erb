@@ -1,3 +1,4 @@
+<%= tinymce_assets %>
 <div class="well">
 	<div class="row">
 		<div class="col-md-1"></div>
@@ -34,7 +35,7 @@
 	</div>
 	
 <ul>
- <% @post.categories.pluck(:category_name).each do |category| %>
+ <label>Categories:</label><% @post.categories.pluck(:category_name).each do |category| %>
  	<%= category %> 
  <% end %>
 </ul>
@@ -43,8 +44,7 @@
 	<ul>
  		<%= form_tag "/mappings", :method => 'post' do %>
 		<% Category.all.each do |category| %>
-		<!--<input type="checkbox" name="category_id" value= "<%= category.id %>"><%= category.category_name %>-->
-			<%= check_box_tag 'category_ids[]', category.id -%><%= category.category_name %>
+			<%= check_box_tag 'category_ids[]', category.id %><%= category.category_name %>
 			<input type="hidden" name="post_id" value="<%= @post.id %>">
 		<% end %>
 		<button>Add Categories</button>
@@ -52,21 +52,23 @@
 	</ul>
 <% end %>
 
-<h3 style="clear:both; margin-top: 100px">Comments</h3>
-
-<p>Write a Comment</p>
-
+<h3 style="clear:both; margin-top: 25px">Comments</h3>
  <%= form_tag "/comments", :method => 'post' do %>
-  <input name="body" placeholder="Add a Comment" size="50">
-  <input type="hidden" name="user_id" value="<%= @user_id %>">
-  <input type="hidden" name="post_id" value="<%= @post.id %>">
+
+      <%= text_area_tag :body, "", :class => "tinymce", :rows => 10, :cols => 80 %>
+      <%= tinymce %>
+
+      <input type="hidden" name="user_id" value="<%= @user_id %>">
+      <input type="hidden" name="post_id" value="<%= @post.id %>">
+      <br></br>
   <button>Submit</button>
 <% end %>
+
+<br></br>
 
 <div class="row">
 	<div class="col-md-1"></div>
 	<div class="col-md-7">
-		<p>Comments</p>
 		<ul class="list-group">
 			<% Comment.where(post_id: @post.id).order('date').each do |comment| %>
 			    <li href="#" class="list-group-item">

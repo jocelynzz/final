@@ -16,6 +16,9 @@
 			</div>
 			<div class="col-md-4"></div>
 		</div>
+
+  <%= paginate @posts %>
+  
   <% @posts.each do |post| %>
 	<div class="row">
 		<div class="col-md-1"></div>

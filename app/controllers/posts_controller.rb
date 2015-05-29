@@ -8,7 +8,8 @@ class PostsController < ApplicationController
  end
  	
  def index
-	@posts = Post.all
+	#@posts = Post.all.limit(1000).offset(1000)
+	@posts = Post.all.limit(1000).order('date desc').page(params[:page]).per(10)
 	
  end
 

@@ -11929,3 +11929,1940 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (63.4ms)
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
 Completed 200 OK in 479ms (Views: 469.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 15:32:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"QeqlbjKrjyG707PF9z7EEo/pAK2chMjmm4PlSKXBWWaxbkPfMNBG/oz6+yZGFMFP9YjkANh/c37Y2Ge+8uOZeA==", "id"=>"13"}
+  [1m[35mPost Load (2.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (52.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 414ms (Views: 392.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-26 16:04:16 -0500
+Processing by PostsController#new as HTML
+Redirected to http://localhost:4000/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-26 16:04:16 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (6.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.4ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 342ms (Views: 326.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-26 17:37:11 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (4.0ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (1.9ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (62.9ms)
+Completed 200 OK in 1200ms (Views: 1121.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:37:17 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"RJ7/HnksxD3TJXa9VCle21nYVQeoY6+q1goYby/EF82vUHYXKYS75oqAW0ULlX3A0grXHSdplSqTRiZbB3AykQ==", "id"=>"13"}
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (99.5ms)
+Completed 200 OK in 375ms (Views: 358.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:40:45 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (3.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 557ms (Views: 523.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:41:53 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.9ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 459ms (Views: 434.7ms | ActiveRecord: 2.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:41:59 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.9ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 258ms (Views: 244.8ms | ActiveRecord: 1.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:45:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (3.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (3.5ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (115.9ms)
+Completed 200 OK in 842ms (Views: 774.6ms | ActiveRecord: 7.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:47:42 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (2.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 568ms (Views: 532.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:48:44 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 338ms (Views: 300.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:49:21 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (2.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (84.5ms)
+Completed 200 OK in 647ms (Views: 619.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:49:38 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.8ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (107.9ms)
+Completed 200 OK in 917ms (Views: 883.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:50:17 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (93.9ms)
+Completed 200 OK in 581ms (Views: 565.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:51:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (4.6ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (81.6ms)
+Completed 200 OK in 421ms (Views: 398.5ms | ActiveRecord: 5.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:51:46 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 277ms (Views: 256.7ms | ActiveRecord: 1.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:51:55 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 238ms (Views: 235.4ms | ActiveRecord: 0.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts" for ::1 at 2015-05-26 17:51:56 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 123ms (Views: 121.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:51:58 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"5whg7913wvnqjP4DB9alu7DVTzQkDXAHgYyFSRusUIEMxunmjd+9IrMp0/tYaoagOwfNLqsHSofEwLt9Mxh13Q==", "id"=>"13"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 178ms (Views: 176.0ms | ActiveRecord: 0.7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 17:52:34 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 443ms (Views: 426.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:47:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (3.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (121.2ms)
+Completed 200 OK in 644ms (Views: 604.4ms | ActiveRecord: 4.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:48:58 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 506ms (Views: 488.8ms | ActiveRecord: 1.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:49:16 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 531ms (Views: 508.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:49:56 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 364ms (Views: 344.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:50:08 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (2.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 365ms (Views: 349.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:50:17 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (2.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 295ms (Views: 276.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:50:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (52.8ms)
+Completed 200 OK in 366ms (Views: 348.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:50:40 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 289ms (Views: 272.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:50:48 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 378ms (Views: 364.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:50:58 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 365ms (Views: 336.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:51:08 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 227ms (Views: 224.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:51:17 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 182ms (Views: 179.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:55:40 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 500ms (Views: 480.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:56:02 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (4.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 434ms (Views: 413.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:56:28 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 345ms (Views: 327.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:56:48 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 389ms (Views: 371.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:57:07 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (5.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 329ms (Views: 305.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:58:50 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 452ms (Views: 433.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/comments" for ::1 at 2015-05-26 18:59:00 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLJM6LmD6+b/UkwDhEDEp2duGfystrrK70Z9+egdXfSnfMXh6SuUPab3Yfvb/Oe87Lyb5iO8gEqqCkPNwKl4qA==", "body"=>"efajdsafdasfsafafja dfakajkfljalaf               ", "user_id"=>"", "post_id"=>"13"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:4000/posts/13
+Completed 302 Found in 202ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:59:00 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (4.8ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 367ms (Views: 352.1ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/comments" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLJM6LmD6+b/UkwDhEDEp2duGfystrrK70Z9+egdXfSnfMXh6SuUPab3Yfvb/Oe87Lyb5iO8gEqqCkPNwKl4qA==", "body"=>"efajdsafdasfsafafja dfakajkfljalaf               ", "user_id"=>"", "post_id"=>"13"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Redirected to http://localhost:4000/posts/13
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 161ms (Views: 159.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/comments" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLJM6LmD6+b/UkwDhEDEp2duGfystrrK70Z9+egdXfSnfMXh6SuUPab3Yfvb/Oe87Lyb5iO8gEqqCkPNwKl4qA==", "body"=>"efajdsafdasfsafafja dfakajkfljalaf               ", "user_id"=>"", "post_id"=>"13"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:4000/posts/13
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 159ms (Views: 157.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/comments" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLJM6LmD6+b/UkwDhEDEp2duGfystrrK70Z9+egdXfSnfMXh6SuUPab3Yfvb/Oe87Lyb5iO8gEqqCkPNwKl4qA==", "body"=>"efajdsafdasfsafafja dfakajkfljalaf               ", "user_id"=>"", "post_id"=>"13"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:4000/posts/13
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.6ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 200ms (Views: 197.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/comments" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLJM6LmD6+b/UkwDhEDEp2duGfystrrK70Z9+egdXfSnfMXh6SuUPab3Yfvb/Oe87Lyb5iO8gEqqCkPNwKl4qA==", "body"=>"efajdsafdasfsafafja dfakajkfljalaf               ", "user_id"=>"", "post_id"=>"13"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:4000/posts/13
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/comments" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLJM6LmD6+b/UkwDhEDEp2duGfystrrK70Z9+egdXfSnfMXh6SuUPab3Yfvb/Oe87Lyb5iO8gEqqCkPNwKl4qA==", "body"=>"efajdsafdasfsafafja dfakajkfljalaf               ", "user_id"=>"", "post_id"=>"13"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:4000/posts/13
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 18:59:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 173ms (Views: 170.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:00:12 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 674ms (Views: 656.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:00:23 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 474ms (Views: 453.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:00:35 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 508ms (Views: 489.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:00:48 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (1.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 831ms (Views: 800.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:03:11 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 443ms (Views: 415.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:05:24 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (2.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 364ms (Views: 328.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:05:33 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 437ms (Views: 419.2ms | ActiveRecord: 1.6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:05:42 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 189ms (Views: 186.6ms | ActiveRecord: 0.7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:07:06 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.8ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (114.0ms)
+Completed 200 OK in 356ms (Views: 339.3ms | ActiveRecord: 2.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:09:45 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (2.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.7ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (136.8ms)
+Completed 200 OK in 983ms (Views: 945.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:10:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (2.9ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (117.1ms)
+Completed 200 OK in 885ms (Views: 851.7ms | ActiveRecord: 3.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:10:11 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (2.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (93.5ms)
+Completed 200 OK in 860ms (Views: 840.5ms | ActiveRecord: 2.6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-26 19:10:29 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (2.8ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (1.4ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 374ms (Views: 348.0ms | ActiveRecord: 4.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TEMPORARY TABLE "aposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "user_id" integer, "date" datetime) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  SELECT * FROM "posts"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "aposts" ("id","title","body","user_id","date") VALUES (13, '10 Reasons Cats Meow', 'An interesting article about why cats meow =)
+By Caroline Golon
+Reference: https://www.petfinder.com/cats/cat-behavior-and-training/why-cats-meow/
+
+According to Arden Moore, author of The Cat Behavior Answer Book, “cats are capable of making at least 30 sounds, including at least 19 variations on the simple meow.”
+
+So why do cats meow? Check out ten possible translations for cat talk:
+
+10) I’m hurt – If your cat suddenly begins to meow excessively, take him to be evaluated by a veterinarian immediately. Your cat’s meows may indicate that there is something medically wrong, especially if the behavior isn’t typical. “Numerous diseases can cause a cat to feel hunger, thirst, or pain, all of which can lead to excessive meowing,” advises Web MD.
+
+9) I’m just saying hi – Often a cat meows to his human when you come home, says the ASPCA website, or even to greet you when you see each other in the house.
+
+8) I want food – The “I’m hungry” meow is likely one all cat parents know well. “Lots of cats know just how to tell their families that it’s time for dinner,” says pet blogger, Jane Harrell. “My cat Mojo would run around after me, meowing the whole time if she thought dinner was going to be late.”
+
+7) Pay attention to me – Sometimes cats talk simply because they want your attention – and they learn that meowing gets them just that. “Cats often meow to initiate play, petting or to get you to talk to them,” explains Web MD.
+
+6) Let me in - “If a door is closed, cats might meow to get you to open it for them,” says Harrell. “I have a foster cat who meows every time I close the bedroom door. She doesn’t want to come in – she just doesn’t like having it closed.”
+
+5) I’m in heat – A female cat in heat might yowl incessantly, says Moore. “Another good reason for spaying!” she adds.
+
+4) I’m stressed – According to WebMD, cats who are stressed may become more vocal than normal. You may have experienced this first hand with a cat meowing loudly in the car on the way to the vet, for example.
+
+3) I’m ticked off – “Angry, agitated cats will often erupt into a screaming match if they feel threatened enough to attack,” says Moore. She describes this mad meow sound as more of a yowl.
+
+2) I don’t want to be alone – According to The Ohio State University’s College of Veterinary Medicine’s Indoor Pet Initiative, when some cats are left alone for lengthy periods of time, they may become anxious and, among other things, meow excessively.
+
+1) I’m getting older – “Increased vocalization is fairly common in senior cats,” says Dr. Arnold Plotnick of Manhattan Cats and veterinary expert to catchannel.com. As cats age, Dr. Plotnick explains, they may display a decrease in cognitive function, demonstrated in a variety of ways, including loud meowing.
+
+Of course, as any cat parent knows, sometimes cats meow for some unknown reason. Perhaps because the sky is blue or he wants you to change the channel on the television. Since cats can make a variety of vocalizations, your cat will likely use distinctive sounds in different occasions with different meanings.  Paying attention to the circumstances in which your cat meows or vocalizes, and the sounds he makes can be fun and help you understand your resident feline a little better.', 22, '2015-05-26 03:35:24.822927')[0m
+  [1m[35m (3.2ms)[0m  DROP TABLE "posts"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "user_id" integer, "date" timestamp) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aposts_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aposts"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "posts" ("id","title","body","user_id","date") VALUES (13, '10 Reasons Cats Meow', 'An interesting article about why cats meow =)
+By Caroline Golon
+Reference: https://www.petfinder.com/cats/cat-behavior-and-training/why-cats-meow/
+
+According to Arden Moore, author of The Cat Behavior Answer Book, “cats are capable of making at least 30 sounds, including at least 19 variations on the simple meow.”
+
+So why do cats meow? Check out ten possible translations for cat talk:
+
+10) I’m hurt – If your cat suddenly begins to meow excessively, take him to be evaluated by a veterinarian immediately. Your cat’s meows may indicate that there is something medically wrong, especially if the behavior isn’t typical. “Numerous diseases can cause a cat to feel hunger, thirst, or pain, all of which can lead to excessive meowing,” advises Web MD.
+
+9) I’m just saying hi – Often a cat meows to his human when you come home, says the ASPCA website, or even to greet you when you see each other in the house.
+
+8) I want food – The “I’m hungry” meow is likely one all cat parents know well. “Lots of cats know just how to tell their families that it’s time for dinner,” says pet blogger, Jane Harrell. “My cat Mojo would run around after me, meowing the whole time if she thought dinner was going to be late.”
+
+7) Pay attention to me – Sometimes cats talk simply because they want your attention – and they learn that meowing gets them just that. “Cats often meow to initiate play, petting or to get you to talk to them,” explains Web MD.
+
+6) Let me in - “If a door is closed, cats might meow to get you to open it for them,” says Harrell. “I have a foster cat who meows every time I close the bedroom door. She doesn’t want to come in – she just doesn’t like having it closed.”
+
+5) I’m in heat – A female cat in heat might yowl incessantly, says Moore. “Another good reason for spaying!” she adds.
+
+4) I’m stressed – According to WebMD, cats who are stressed may become more vocal than normal. You may have experienced this first hand with a cat meowing loudly in the car on the way to the vet, for example.
+
+3) I’m ticked off – “Angry, agitated cats will often erupt into a screaming match if they feel threatened enough to attack,” says Moore. She describes this mad meow sound as more of a yowl.
+
+2) I don’t want to be alone – According to The Ohio State University’s College of Veterinary Medicine’s Indoor Pet Initiative, when some cats are left alone for lengthy periods of time, they may become anxious and, among other things, meow excessively.
+
+1) I’m getting older – “Increased vocalization is fairly common in senior cats,” says Dr. Arnold Plotnick of Manhattan Cats and veterinary expert to catchannel.com. As cats age, Dr. Plotnick explains, they may display a decrease in cognitive function, demonstrated in a variety of ways, including loud meowing.
+
+Of course, as any cat parent knows, sometimes cats meow for some unknown reason. Perhaps because the sky is blue or he wants you to change the channel on the television. Since cats can make a variety of vocalizations, your cat will likely use distinctive sounds in different occasions with different meanings.  Paying attention to the circumstances in which your cat meows or vocalizes, and the sounds he makes can be fun and help you understand your resident feline a little better.', 22, '2015-05-26 03:35:24.822927')[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "aposts"
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "acomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "post_id" integer, "date" datetime, "body" text) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tindex_acomments_on_post_id" ON "acomments" ("post_id")
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "tindex_acomments_on_user_id" ON "acomments" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM "comments"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (12, 5, 1, '2015-05-18 22:35:32.645532', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (13, 6, 1, '2015-05-18 22:44:43.979154', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (14, 6, 1, '2015-05-18 22:50:08.715589', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (15, 6, 1, '2015-05-18 22:54:54.160220', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (16, 6, 1, '2015-05-18 22:55:37.347537', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (17, 8, 2, '2015-05-18 23:02:07.632429', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (18, 10, 3, '2015-05-18 23:50:10.453206', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (19, 14, 5, '2015-05-21 05:05:10.344056', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (20, 14, 5, '2015-05-21 05:06:21.923654', 'hello')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (21, 14, 5, '2015-05-21 05:06:42.127728', 'second comment')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (22, 16, 7, '2015-05-21 23:33:49.526311', 'hahah')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "acomments" ("id","user_id","post_id","date","body") VALUES (23, 23, 7, '2015-05-26 03:01:27.487462', 'rwar')
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "comments"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "post_id" integer, "date" timestamp, "body" text) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acomments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acomments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acomments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acomments_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "acomments"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (12, 5, 1, '2015-05-18 22:35:32.645532', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (13, 6, 1, '2015-05-18 22:44:43.979154', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (14, 6, 1, '2015-05-18 22:50:08.715589', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (15, 6, 1, '2015-05-18 22:54:54.160220', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (16, 6, 1, '2015-05-18 22:55:37.347537', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (17, 8, 2, '2015-05-18 23:02:07.632429', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (18, 10, 3, '2015-05-18 23:50:10.453206', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (19, 14, 5, '2015-05-21 05:05:10.344056', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (20, 14, 5, '2015-05-21 05:06:21.923654', 'hello')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (21, 14, 5, '2015-05-21 05:06:42.127728', 'second comment')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (22, 16, 7, '2015-05-21 23:33:49.526311', 'hahah')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "comments" ("id","user_id","post_id","date","body") VALUES (23, 23, 7, '2015-05-26 03:01:27.487462', 'rwar')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "acomments"[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.9ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mappings_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mappings_on_post_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mappings_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mappings_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relations_on_following_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relations_on_following_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relations_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relations_on_follower_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mappings_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mappings_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mappings_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mappings_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relations_on_following_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relations_on_following_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relations_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relations_on_follower_id' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-05-29 14:41:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.8ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 1283ms (Views: 1194.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 14:46:19 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"7JO4nT4Gq3Gg3SiecVdAg/drfBr4sWQ70XOillmRvHAHXTGUbq7Uqvl4BWYu62OYfLn+AHe7XruUP5yicSWZLA==", "id"=>"13"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (1.5ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (222.6ms)
+Completed 200 OK in 447ms (Views: 438.0ms | ActiveRecord: 3.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 14:54:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (2.7ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (127.6ms)
+Completed 200 OK in 371ms (Views: 343.8ms | ActiveRecord: 3.5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 14:55:20 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 334ms (Views: 330.6ms | ActiveRecord: 0.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 14:55:36 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 224ms (Views: 220.3ms | ActiveRecord: 0.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 14:58:30 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 208ms (Views: 204.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 15:01:05 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (1.6ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 276ms (Views: 259.5ms | ActiveRecord: 1.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 15:01:28 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 156ms (Views: 154.4ms | ActiveRecord: 0.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 15:01:45 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 165ms (Views: 161.0ms | ActiveRecord: 1.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 15:03:46 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.7ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 655ms (Views: 652.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2015-05-29 15:04:22 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 176ms (Views: 173.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for ::1 at 2015-05-29 15:04:27 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 116ms (Views: 115.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-29 15:04:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bC784c6zRxkDDjb4yMVmmcDMpVNtAFcnsSvEiJ9Y9amH4HXonhs4wlqrGwCXeUWCSx4nSeIKbaf0Z/q8t+zQ9Q==", "email"=>"admin@wordpress.com", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "admin@wordpress.com"]]
+Redirected to http://localhost:4000/
+Completed 302 Found in 120ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:04:28 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (8.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 122ms (Views: 119.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:04:30 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:05:35 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (23.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 185ms (Views: 183.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:05:37 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (12.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 178ms (Views: 174.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:05:40 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (18.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 138ms (Views: 137.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 15:05:42 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"AXCNY4cPimYpfxD+o39zhGkUSFqyHtGwniH3MnKlDezqvgRq16f1vXDaPQb8w1Cf4sbKQD0U6zDbbckGWhEosA==", "id"=>"13"}
+  [1m[35mPost Load (1.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (25.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 154ms (Views: 150.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for ::1 at 2015-05-29 15:05:45 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (6.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 128ms (Views: 126.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:05:47 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (27.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 142ms (Views: 141.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:05:50 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (15.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 148ms (Views: 146.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:06:32 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (26.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 169ms (Views: 167.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:06:34 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (17.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 140ms (Views: 139.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2015-05-29 15:06:36 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (9.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 157ms (Views: 153.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:06:40 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (20.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 143ms (Views: 141.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:08:06 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (29.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 242ms (Views: 239.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:08:09 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (19.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 139ms (Views: 138.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:08:11 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 142ms (Views: 139.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:08:12 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (18.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 138ms (Views: 136.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:09:51 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (34.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 210ms (Views: 206.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:09:54 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (19.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 139ms (Views: 137.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:09:58 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (7.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 123ms (Views: 121.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:10:00 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 134ms (Views: 132.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:10:31 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (27.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 195ms (Views: 193.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:11:44 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (42.1ms)
+  [1m[36mUser Load (6.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 307ms (Views: 298.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:13:24 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (98.2ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 462ms (Views: 444.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:13:37 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (37.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 193ms (Views: 186.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-05-29 15:14:35 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (34.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 278ms (Views: 276.5ms | ActiveRecord: 0.5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/" for ::1 at 2015-05-29 15:15:13 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (1.3ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (30.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 22]]
+Completed 200 OK in 262ms (Views: 250.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2015-05-29 15:15:16 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"fEATy9fWzc6Jd74AXzXfECSEsrUUL6J6p331o/IMDl2XjprCh36yFdDSk/gAifwLr1Ywr5slmPriMcuX2rgrAQ==", "id"=>"13"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "categories"."category_name" FROM "categories" INNER JOIN "mappings" ON "categories"."id" = "mappings"."category_id" WHERE "mappings"."post_id" = ?  [["post_id", 13]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  ORDER BY date  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (52.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 207ms (Views: 205.3ms | ActiveRecord: 0.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/themes/advanced/theme.js"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/" for ::1 at 2015-05-29 15:15:50 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (9.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
+Completed 200 OK in 168ms (Views: 164.2ms | ActiveRecord: 1.5ms)
