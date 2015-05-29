@@ -15,11 +15,25 @@
  */
  
 .errors {
-  color: red;
+  color: #ff0000;
   font-weight: bold;
 }
 
 .adjustedHeight {
     height:80px;
+}
+
+html, body, .container {
+    height: 100%;
+}
+
+.container {
+    display: table;
+    vertical-align: middle;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
 }
 

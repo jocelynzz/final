@@ -13866,3 +13866,521 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (9.6ms)
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 22]]
 Completed 200 OK in 168ms (Views: 164.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/signout" for ::1 at 2015-05-29 15:19:43 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:4000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:19:43 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 209ms (Views: 207.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:19:45 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+ </p>-->
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:24: unknown regexp option - p
+unmatched close parenthesis: /p>-->
+  
+ <p>
+    <%= label_tag :email );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( text_field_tag :email );@output_buffer.safe_append='
+ </
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:26: syntax error, unexpected '<'
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+ </p>
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: unterminated regexp meets end of file):
+  app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:24: unknown regexp option - p
+  app/views/users/new.html.erb:26: syntax error, unexpected '<'
+  app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:29: unterminated regexp meets end of file
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (53.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (122.6ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:19:46 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+ </p>-->
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:24: unknown regexp option - p
+unmatched close parenthesis: /p>-->
+  
+ <p>
+    <%= label_tag :email );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( text_field_tag :email );@output_buffer.safe_append='
+ </
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:26: syntax error, unexpected '<'
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+ </p>
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: unterminated regexp meets end of file):
+  app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:24: unknown regexp option - p
+  app/views/users/new.html.erb:26: syntax error, unexpected '<'
+  app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:29: unterminated regexp meets end of file
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (49.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (108.9ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:19:57 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+ </p>-->
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:24: unknown regexp option - p
+unmatched close parenthesis: /p>-->
+  
+ <p>
+    <%= label_tag :email );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( text_field_tag :email );@output_buffer.safe_append='
+ </
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:26: syntax error, unexpected '<'
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+ </p>
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: unterminated regexp meets end of file):
+  app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:24: unknown regexp option - p
+  app/views/users/new.html.erb:26: syntax error, unexpected '<'
+  app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:29: unterminated regexp meets end of file
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (51.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (109.6ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:19:57 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+ </p>-->
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:24: unknown regexp option - p
+unmatched close parenthesis: /p>-->
+  
+ <p>
+    <%= label_tag :email );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( text_field_tag :email );@output_buffer.safe_append='
+ </
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:26: syntax error, unexpected '<'
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+ </p>
+  ^
+/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:29: unterminated regexp meets end of file):
+  app/views/users/new.html.erb:19: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:24: unknown regexp option - p
+  app/views/users/new.html.erb:26: syntax error, unexpected '<'
+  app/views/users/new.html.erb:29: syntax error, unexpected '<', expecting ')'
+  app/views/users/new.html.erb:29: unterminated regexp meets end of file
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (133.7ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:26:37 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 417ms (Views: 398.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:26:41 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 138ms (Views: 137.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-29 15:27:02 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 165ms (Views: 164.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:27:05 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 120ms (Views: 119.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:30:53 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/users/new.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (31.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (56.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (159.8ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:31:21 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/users/new.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (63.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (143.8ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:31:38 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/users/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.0ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (53.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (118.2ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:32:08 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Joceyn/Desktop/final/app/views/users/new.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/users/new.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (53.9ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (124.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:33:14 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 207ms (Views: 206.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:33:17 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 171ms (Views: 156.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:34:44 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 179ms (Views: 178.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:35:37 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 158ms (Views: 156.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:36:33 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 137ms (Views: 135.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:36:35 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (8.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 170ms (Views: 158.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:36:37 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 102ms (Views: 101.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:37:58 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 180ms (Views: 179.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:37:59 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 118ms (Views: 117.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:41:37 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 431ms (Views: 422.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:42:24 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 166ms (Views: 164.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:42:55 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 177ms (Views: 176.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:43:17 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 171ms (Views: 170.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-29 15:44:00 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 161ms (Views: 160.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:44:02 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 123ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:46:33 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 188ms (Views: 186.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-29 15:46:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RQJ6oLVFElko+lLTWW1WIpWua0UlIi3oyLwp4FNG3Y22oDj0n1rkj0GxLMS2ZZDAYQ7t5uesjfmbs6Tqfk+Kg==", "name"=>"JOCELYN ZHANG", "email"=>"jocelynz@uchicago.edu", "photo_url"=>"", "password"=>"[FILTERED]", "commit"=>"Sign Me Up!"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jocelynz@uchicago.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'JOCELYN ZHANG' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("user_name", "email", "password_digest") VALUES (?, ?, ?)  [["user_name", "JOCELYN ZHANG"], ["email", "jocelynz@uchicago.edu"], ["password_digest", "$2a$10$9odhmH3vOFMqirjFchKa3upnCTFNS6b4iNBy.kl4v/16qJmKPuDpm"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:4000/
+Completed 302 Found in 149ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:46:48 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 136ms (Views: 134.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:46:52 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 145ms (Views: 144.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-29 15:46:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"suJltm2n1u3A7KfQ/swAa3zFJ/c8P+zaJhu1rga+v8RZLOy/PQ+pNplJiiihcCNw9xel7bM11lpjV4uaLgqamA==", "name"=>"fadfa", "email"=>"", "photo_url"=>"", "password"=>"[FILTERED]", "commit"=>"Sign Me Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'fadfa' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 137ms (Views: 113.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2015-05-29 15:47:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Joceyn/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (100.3ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (50.1ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Joceyn/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (124.9ms)
+
+
+Started POST "/users" for ::1 at 2015-05-29 15:47:26 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TtdrOEj+WGjruJtkFJfwIIyJXXqJigXhElwcjnZCnI2lGeIxGFYns7IdtpxLK9M7B1vfYAaAP2FXECK6Xva50Q==", "name"=>"fadfa", "email"=>"", "photo_url"=>"admin@wordpress.com", "password"=>"[FILTERED]", "commit"=>"Sign Me Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'fadfa' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "email", "password_digest") VALUES (?, ?, ?)  [["user_name", "fadfa"], ["email", ""], ["password_digest", "$2a$10$Mqhae4UnrNecstW2qzMmaeetFtdkjoYXPTPbe7UbbIn22nxUWRWxu"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:4000/
+Completed 302 Found in 118ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:47:26 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY date desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT "users"."user_name" FROM "users" WHERE "users"."id" = ?  [["id", 22]]
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 138ms (Views: 135.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-29 15:47:31 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 113ms (Views: 111.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-29 15:47:37 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qvEAZicJmFDcfWS9KLGWHFs6lSbvs8MUyx8c0jgBs/FBP4lvd6Hni4XYSUV3DbUH0OgXPGC5+ZSOUyLmELWWrQ==", "name"=>"kjk", "email"=>"", "photo_url"=>"", "password"=>"[FILTERED]", "commit"=>"Sign Me Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'kjk' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 138ms (Views: 132.0ms | ActiveRecord: 0.4ms)

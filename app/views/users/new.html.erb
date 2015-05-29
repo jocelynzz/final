@@ -1,4 +1,4 @@
-<h3>Sign Up</h3>
+<br></br>
 <% if @user.errors.any? %>
   <ul class="errors">
     <% @user.errors.full_messages.each do |msg| %>
@@ -7,27 +7,41 @@
   </ul>
 <% end %>
 
-<%= form_tag "/users", multipart: true do %>
+<div class="container">
+  <div class="vertical-center-row">
+    <div align="center">
+      <h3>Sign Up</h3>
+      <%= form_tag "/users" do %>
+        <p>
+            <%= label_tag :* %>
+            <%= label_tag :name %>
 
- <p>
-    <%= label_tag :name %>
-    <%= text_field_tag :name %>
- </p>
- 
- <!--<p>
- 	<%= file_field_tag :photo
- </p>-->
-  
- <p>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
- </p>
-  
- <p>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
- </p>
- 
+            <%= text_field_tag :name %>
+        </p>
 
-  <%= submit_tag "Sign Me Up!" %>
-<% end %>
+        <p>
+            <%= label_tag :* %>
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+        </p>
+
+        <p>
+            <%= label_tag :photo_URL %>
+            <%= text_field_tag :photo_url %>
+        </p>
+
+        <p>
+            <%= label_tag :* %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+        </p>
+
+          <%= submit_tag "Sign Me Up!" %>
+          <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
