@@ -19,5 +19,6 @@
 
 tinyMCE.init({
   mode: 'textareas',
-  theme: 'advanced',
+  theme: 'modern',
+  fontsize_formats: "8pt 9pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt"
 });

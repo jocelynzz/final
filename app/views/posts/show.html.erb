@@ -1,11 +1,6 @@
 <%= tinymce_assets %>
 <div class="well">
 	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-7"></div>
-		<div class="col-md-4"></div>
-	</div>
-	<div class="row">
 		<div class="col-md-1">
 			<% if session["user_id"].present? %>
 				<p>
@@ -23,7 +18,9 @@
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title"><%= link_to @post.title, post_url(@post.id),  :method => 'get' %><h6><%= @post.date %></h6></h3>
+					<h3 class="panel-title"><%= link_to @post.title, post_url(@post.id),  :method => 'get' %></h3>
+                    <h6><%= link_to User.find_by(:id => @post.user_id).user_name, user_url(@post.user_id) %></h6>
+                    <h6><%= @post.date %></h6>
 					<% if session["user_id"].to_i.equal?(@post.user_id) %>
 						<h5><p><%= link_to "(delete)", post_url(@post.id), :method => 'delete' %></p></h5>
 					<% end %>
@@ -57,42 +54,13 @@
 
       <%= text_area_tag :body, "", :class => "tinymce", :rows => 10, :cols => 80 %>
       <%= tinymce %>
-
       <input type="hidden" name="user_id" value="<%= @user_id %>">
       <input type="hidden" name="post_id" value="<%= @post.id %>">
-      <br></br>
-  <button>Submit</button>
+
+  <p></p><button>Submit</button></p>
 <% end %>
 
 <br></br>
-
-<div class="row">
-  <p>
-    <%= label_tag :* %>
-    <%= label_tag :name %>
-
-    <%= text_field_tag :name %>
-  </p>
-
-  <p>
-    <%= label_tag :* %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </p>
-
-  <p>
-    <%= label_tag :photo_url %>
-    <%= text_field_tag :photo_url %>
-  </p>
-
-  <p>
-    <%= label_tag :* %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </p>
-
-
-  <%= submit_tag "Sign Me Up!" %>
 	<div class="col-md-7">
 		<ul class="list-group">
 			<% Comment.where(post_id: @post.id).order('date').each do |comment| %>

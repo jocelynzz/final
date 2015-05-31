@@ -19,7 +19,7 @@ Comment
 
 Relation
     follower_id: integer
-    following_id: integer
+    followed_id: integer
 
 Mapping
     category_id: integer

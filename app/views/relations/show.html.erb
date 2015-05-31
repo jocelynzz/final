@@ -1,0 +1,12 @@
+<h2>
+  <%= @user.user_name + "'s " + @title %>
+</h2>
+
+<%= link_to "Back to " + @user.user_name + "'s Profile", user_url(@user.id), :method=>'get' %>
+<ul>
+<% @users.each do |u| %>
+      <li>
+        <%=link_to u.user_name, user_url(u.id), :method=>'get' %>
+      </li>
+<% end %>
+</ul>

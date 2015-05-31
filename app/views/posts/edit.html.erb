@@ -1,13 +1,14 @@
 <br></br>
 <%= tinymce_assets %>
 <%= form_tag "/posts/#{@post.id}", :method => 'patch' do %>
-
   <p>
-  <label>Title:</label> <input value="<%= @post.title %>" name="title" size="30">
-  <label>Date:</label> <input value="<%= Time.now %>" name="date">
+    <label>Title:</label> <input value="<%= @post.title %>" name="title" size="30">
+    <label>Date:</label> <input value="<%= Time.now %>" name="date">
   </p>
-  <%= tinymce %>
-  <%= text_area_tag :body, simple_format(@post.body), :class => "tinymce", :rows => 100, :cols => 80 %>
-  
+  <p>
+    <%= tinymce %>
+    <%= text_area_tag :body, simple_format(@post.body), :class => "tinymce", :rows => 60, :cols => 80 %>
+  </p>
   <p><button>Submit</button></p>
 <% end %>
+

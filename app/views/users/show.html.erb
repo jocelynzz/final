@@ -1,0 +1,66 @@
+<br></br>
+<div class="well">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <% if @user.photo_url.blank? %>
+          <p>
+            <%= image_tag "http://www.mrwallpaper.com/wallpapers/cute-cat-head-1280x960.jpg",
+            size: '150x150', :class => "img-circle"%>
+          </p>
+      <% else %>
+        <p>
+            <%= image_tag @user.photo_url, size: '150x150', :class => "img-circle"%>
+        </p>
+      <% end %>
+
+      <p>
+        <strong>Name:</strong> <%= @user.user_name %>
+      </p>
+
+      <p>
+        <strong>Bio:</strong> <%= @user.intro %>
+      </p>
+
+      <p>
+        <label>Following: </label>
+        <%= link_to @user.followings.count,following_user_url(:id => @user.id), :method => 'get' %>
+        <label>Followers: </label>
+        <%= link_to @user.followers.count, followers_user_url(:id => @user.id), :method => 'get' %>
+      </p>
+
+      <% if session["user_id"].to_i.equal?(@user.id) %>
+          <p>
+            <strong>Email address on file:</strong> <%= @user.email %>
+          </p>
+      <% else %>
+          <% @current_user = User.find_by(:id => session["user_id"]) %>
+          <% if @current_user.following?(@user) %>
+              <%= form_for(@current_user.active_relations.find_by(followed_id: @user.id),
+                           html: { method: :delete }) do |f| %>
+                  <%= f.submit "Unfollow", class: "btn" %>
+              <% end %>
+          <% else %>
+              <%= form_for(@current_user.active_relations.build) do |f| %>
+                  <div><%= hidden_field_tag :followed_id, @user.id %></div>
+                  <%= f.submit "Follow", class: "btn btn-primary" %>
+              <% end %>
+           <% end %>
+      <% end %>
+
+    </div>
+    <div class="col-md-3">
+      <p>
+        <label>Posts: </label>
+        <%= @user.posts.count %>
+      </p>
+
+      <ul>
+        <% @user.posts.each do |post| %>
+            <li><%= link_to post.title,post_url(post.id), :method => 'get' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

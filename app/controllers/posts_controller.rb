@@ -50,9 +50,10 @@ class PostsController < ApplicationController
  end
 
  def update
-	@post.user_id = params[:user_id],
-	@post.title = params[:title],
-	@post.date = params[:date],
+
+	@post.user_id = session["user_id"]
+	@post.title = params[:title]
+	@post.date = params[:date]
 	@post.body = params[:body]
 	@post.save
 	

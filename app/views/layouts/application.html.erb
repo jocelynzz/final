@@ -5,7 +5,7 @@
   <style>
   body {
 	  padding-top: 45px;
-  } 
+  }
   </style>
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -18,17 +18,21 @@
         <%= notice %>
       </div>
     <% end %>
-    
+
     <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-collapse collapse">
 	    <% if session["user_id"].present? %>
 		    <a class="navbar-brand" href="/">
 		        <%= image_tag("cat.png", :alt => "Brand")%>
-				<%= link_to ("Welcome, " + User.find_by(id: session["user_id"]).user_name), '/', :class => "navbar-brand" %>
+				<%= link_to ("Welcome, " + User.find_by(id: session["user_id"]).user_name), posts_user_url(id: session["user_id"]) , :class => "navbar-brand" %>
+                <%= link_to "My Profile", user_url(User.find_by(id: session["user_id"])), :class => "navbar-brand" %>
+                <%= link_to "Friends' Meows", meows_user_url(id: session["user_id"]), :class => "navbar-brand" %>
 		    </a>
 			<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">
 				<%= link_to "Sign Out", '/signout', :class => "btn btn-default navbar-btn"%>
+            </ul>
+            </div>
 	    <% else %>
 		    <a class="navbar-brand" href="/">
 		        <%= image_tag("cat.png", :alt => "Brand")%>
@@ -38,9 +42,10 @@
 			<ul class="nav navbar-nav navbar-right">
 				<%= link_to "Sign Up", '/signup', :class => "btn btn-default navbar-btn"%>
 				<%= link_to link_to "Sign In", '/login', :class => "btn btn-default navbar-btn"%>
-		<% end %>
 			</ul>
-		</div>	
+            </div>
+          <% end %>
+    </div>
 	</nav>
 <%= yield %>
 </body>

@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "relations", force: :cascade do |t|
     t.integer "follower_id"
-    t.integer "following_id"
+    t.integer "followed_id"
   end
 
+  add_index "relations", ["followed_id"], name: "index_relations_on_followed_id"
   add_index "relations", ["follower_id"], name: "index_relations_on_follower_id"
-  add_index "relations", ["following_id"], name: "index_relations_on_following_id"
 
   create_table "users", force: :cascade do |t|
     t.text   "photo_url"
