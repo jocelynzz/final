@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Descriptions of this blog:
+* cat icon is a brand, which directs to the home page, where you can see all posts 
 
-Things you may want to cover:
+* Welcome link directs to all the signed-in user's posts
 
-* Ruby version
+* My profile shows the user's information(follower, following, posts, email, bio and profile picture)
 
-* System dependencies
+* Only account holder can see email address on file. S/he cannot see the follow/unfollow button on his/her profile page
 
-* Configuration
+* I refer to this website for the development of follow/unfollow relationships between users: https://www.railstutorial.org/book/following_users
 
-* Database creation
+* I use tinymce rails version to implement the rich-text editor: https://github.com/spohlenz/tinymce-rails
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* I use Kaminari, recommendated by the professor, for paggination: https://github.com/amatsuda/kaminari
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
