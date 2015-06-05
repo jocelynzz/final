@@ -13,7 +13,7 @@ Descriptions of this blog:
 
 * I use tinymce rails version to implement the rich-text editor: https://github.com/spohlenz/tinymce-rails
 
-* I use Kaminari, recommendated by the professor, for paggination: https://github.com/amatsuda/kaminari
+* I use Kaminari, recommendated by the professor, for pagination: https://github.com/amatsuda/kaminari
 
 
 <tt>rake doc:app</tt>.
