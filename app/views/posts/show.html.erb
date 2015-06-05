@@ -1,4 +1,5 @@
 <%= tinymce_assets %>
+
 <div class="well">
 	<div class="row">
 		<div class="col-md-1">
@@ -15,65 +16,74 @@
 				<span class="glyphicon-class"><%= link_to "Back", posts_url %></span>
 			</p>
 		</div>
-		<div class="col-md-7">
+
+		<div class="col-md-10">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title"><%= link_to @post.title, post_url(@post.id),  :method => 'get' %></h3>
                     <h6><%= link_to User.find_by(:id => @post.user_id).user_name, user_url(@post.user_id) %></h6>
                     <h6><%= @post.date %></h6>
 					<% if session["user_id"].to_i.equal?(@post.user_id) %>
-						<h5><p><%= link_to "(delete)", post_url(@post.id), :method => 'delete' %></p></h5>
+                      <p><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        <span class="glyphicon-class"><%= link_to "(delete)", post_url(@post.id), :method => 'delete' %></h5>
+                      </span></p>
 					<% end %>
 				</div>
 				<div class="panel-body"><%= simple_format(@post.body) %></div>
 			</div>
+          
+            <ul>
+                <label>Categories:</label><% @post.categories.pluck(:category_name).each do |category| %>
+                    <%= category %>
+                <% end %>
+            </ul>
+
+            <% if session["user_id"].to_i.equal?(@post.user_id) %>
+                <ul>
+                  <%= form_tag "/mappings", :method => 'post' do %>
+                      <% Category.all.each do |category| %>
+                      <%= check_box_tag 'category_ids[]', category.id %><%= category.category_name %>
+                      <input type="hidden" name="post_id" value="<%= @post.id %>">
+                  <% end %>
+                  <button class="btn btn-small">Add Categories</button>
+                  <% end %>
+             </ul>
+          <% end %>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-md-1"></div>
 	</div>
-	
-<ul>
- <label>Categories:</label><% @post.categories.pluck(:category_name).each do |category| %>
- 	<%= category %> 
- <% end %>
-</ul>
 
-<% if session["user_id"].to_i.equal?(@post.user_id) %>	
-	<ul>
- 		<%= form_tag "/mappings", :method => 'post' do %>
-		<% Category.all.each do |category| %>
-			<%= check_box_tag 'category_ids[]', category.id %><%= category.category_name %>
-			<input type="hidden" name="post_id" value="<%= @post.id %>">
-		<% end %>
-		<button>Add Categories</button>
- 	<% end %> 
-	</ul>
-<% end %>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h4 style="clear:both; margin-top: 20px">Comments</h4>
+        <%= form_tag "/comments", :method => 'post' do %>
+            <%= text_area_tag :body, "", :class => "tinymce", :rows => 10, :cols => 50 %>
+            <%= tinymce %>
+            <input type="hidden" name="user_id" value="<%= @user_id %>">
+            <input type="hidden" name="post_id" value="<%= @post.id %>">
+            <p style="margin-top:10px"><button class="btn btn-small">Submit</button></p>
+          <% end %>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
 
-<h3 style="clear:both; margin-top: 25px">Comments</h3>
- <%= form_tag "/comments", :method => 'post' do %>
-
-      <%= text_area_tag :body, "", :class => "tinymce", :rows => 10, :cols => 80 %>
-      <%= tinymce %>
-      <input type="hidden" name="user_id" value="<%= @user_id %>">
-      <input type="hidden" name="post_id" value="<%= @post.id %>">
-
-  <p></p><button>Submit</button></p>
-<% end %>
-
-<br></br>
-	<div class="col-md-7">
-		<ul class="list-group">
-			<% Comment.where(post_id: @post.id).order('date').each do |comment| %>
-			    <li href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><%= User.where(:id=>comment.user_id).pluck("user_name")[0] %></h4>
-					<h6 class="list-group-item-heading"><%= comment.date %></h6>
-					<p class="list-group-item-text"><%= comment.body %></p>
-				</li>
-			<% end %>
-		</ul>
-	</div>
-	<div class="col-md-4"></div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <ul class="list-group">
+        <% @comments = Comment.where(post_id: @post.id).limit(100).order('date desc').page(params[:page]).per(5) %>
+        <%= paginate @comments %>
+         <% @comments.where(post_id: @post.id).order('date').each do |comment| %>
+            <li href="#" class="list-group-item">
+              <h4 style="font-family:verdana" class="list-group-item-heading"><%= link_to User.where(:id=>comment.user_id).pluck("user_name")[0],
+                                                                                          user_url(comment.user_id)%></h4>
+              <h6 style="font-family:verdana" class="list-group-item-heading"><%= comment.date %></h6>
+              <p style="font-family:verdana" class="list-group-item-text"><%= simple_format(comment.body) %></p>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 </div>
-
-</div>
-<p></p>

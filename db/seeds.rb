@@ -8,12 +8,23 @@
 
 User.delete_all
 Category.delete_all
+Relation.where.not(follower_id:[21,22]).delete_all
+Comment.delete_all
+Post.where.not(user_id:[21,22]).delete_all
 
-User.create user_name: "adminMeow", 
+User.create id: "22",
+			user_name: "adminMeow",
 			password: "meowmeow",
 			email: "admin@wordpress.com",
 			photo_url: "http://cutewallpaperss.com/wp-content/uploads/2015/01/cute_cats__cats_picture_cute_wallpaperss_hd_for_mobile.jpg",
-			intro: "Welcome, >'.'<"
+			intro: "Welcome to Meow blog!"
+
+User.create id: "21",
+						user_name: "Jocelyn",
+						password: "test",
+						email: "jocelyn@wordpress.com",
+						photo_url: "http://tiger.towson.edu/~ahaske2/cute-cat[1].jpg",
+						intro: "I am Autumn. I like dogs...."
 
 Category.create category_name: "catlitter"
 Category.create category_name: "catfood"

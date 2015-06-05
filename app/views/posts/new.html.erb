@@ -1,12 +1,18 @@
 <br></br>
 <%= tinymce_assets %>
-<%= form_tag "/posts" do %>
-  <p>
-  <label>Title:</label> <input name="title" size=30>
-  <label>Date:</label> <%= Time.now %>
-  </p>
-  	<%= text_area_tag :body, "", :class => "tinymce", :rows => 70, :cols => 80 %>
-    <%= tinymce %>
-  <p><button>Submit</button></p>
-  
-<% end %>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <%= form_tag "/posts" do %>
+      <p>
+      <label>Title:</label> <input name="title" size=30>
+      </p>
+
+        <%= text_area_tag :body, "", :class => "tinymce", :rows => 45, :cols => 50 %>
+        <%= tinymce %>
+
+      <p><button style="margin-top:10px; background-color:#218C8D" class="btn btn-small">Submit</button></p>
+    <% end %>
+  </div>
+  <div class="col-md-1"></div>
+</div>

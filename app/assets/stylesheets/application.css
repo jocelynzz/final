@@ -13,27 +13,86 @@
  *= require_tree .
  *= require_self
  */
- 
-.errors {
+body {
+    background-color: #66cccc;
+}
+
+.errors
+{
   color: #ff0000;
   font-weight: bold;
 }
 
-.adjustedHeight {
-    height:80px;
+.changeFont
+{
+ font-family: Verdana;
+ font-size: 11px;
+ text-transform: uppercase;
 }
 
-html, body, .container {
-    height: 100%;
+.changeFontBig
+{
+    font-family: Verdana;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
-.container {
-    display: table;
-    vertical-align: middle;
+.blackColor
+{
+    color: black;
+    font-family: Verdana;
 }
 
-.vertical-center-row {
-    display: table-cell;
-    vertical-align: middle;
+.grayColor
+{
+    color: darkgray;
+    font-family: Verdana;
 }
+
+.btn-large {
+    padding: 18px 28px;
+    font-size: 15px;
+    width: 190px;
+    line-height: 5px;
+    border-radius: 8px;
+    background-color: #66cccc;
+    color: white;
+}
+
+.btn-large:hover {
+    background-color: #ffcc66;
+    color: white;
+}
+
+.btn-small {
+    font-size: 15px;
+    width: 140px;
+    line-height: 6px;
+    border-radius: 8px;
+    background-color: #66cccc;
+    color: white;
+}
+
+.btn-small:hover {
+    background-color: #ffcc66;
+    color: white;
+}
+
+.navbar-default {
+    background-color: #66cccc;
+    border:#66cccc ;
+}
+
+.navbar-default .navbar-brand {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #ecdbff;
+}
+
+.navbar-nav:hover, .navbar-default .navbar-nav:focus {
+    background-color: #ffcc66;
+}
+
 

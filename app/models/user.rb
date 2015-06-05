@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :comments, :dependent => :delete_all
-  has_many :posts, :dependent => :delete_all
+  has_many :comments, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
   has_many :active_relations, :class_name => "Relation",
                               :foreign_key=> "follower_id",
                               :dependent => :destroy

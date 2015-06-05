@@ -1,14 +1,20 @@
 <br></br>
 <%= tinymce_assets %>
-<%= form_tag "/posts/#{@post.id}", :method => 'patch' do %>
-  <p>
-    <label>Title:</label> <input value="<%= @post.title %>" name="title" size="30">
-    <label>Date:</label> <input value="<%= Time.now %>" name="date">
-  </p>
-  <p>
-    <%= tinymce %>
-    <%= text_area_tag :body, simple_format(@post.body), :class => "tinymce", :rows => 60, :cols => 80 %>
-  </p>
-  <p><button>Submit</button></p>
-<% end %>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <%= form_tag "/posts/#{@post.id}", :method => 'patch' do %>
+      <p>
+        <label>Title:</label> <input value="<%= @post.title %>" name="title" size="30">
+         <input type="hidden" value="<%= Time.now %>" name="date">
+      </p>
+      <p>
+        <%= tinymce %>
+        <%= text_area_tag :body, simple_format(@post.body), :class => "tinymce", :rows => 60, :cols => 80 %>
+      </p>
+      <p><button style="margin-top:10px; background-color:#218C8D" class="btn btn-small">Submit</button></p>
+    <% end %>
+  </div>
+  <div class="col-mid-1"></div>
+</div>
 

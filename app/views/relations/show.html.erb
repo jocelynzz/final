@@ -1,12 +1,21 @@
-<h2>
-  <%= @user.user_name + "'s " + @title %>
-</h2>
-
-<%= link_to "Back to " + @user.user_name + "'s Profile", user_url(@user.id), :method=>'get' %>
-<ul>
-<% @users.each do |u| %>
-      <li>
-        <%=link_to u.user_name, user_url(u.id), :method=>'get' %>
-      </li>
-<% end %>
-</ul>
+<div class="well">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <%= link_to "Back to " + @user.user_name + "'s Profile", user_url(@user.id), :method=>'get' %>
+        <h4>
+            <%= @user.user_name + "'s " + @title %>
+        </h4>
+        <ul>
+          <% @user_relations = @users.limit(1000).page(params[:page]).per(10) %>
+          <%= paginate @user_relations %>
+          <% @user_relations.each do |u| %>
+              <li>
+                <%=link_to u.user_name, user_url(u.id), :method=>'get' %>
+              </li>
+          <% end %>
+        </ul>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
