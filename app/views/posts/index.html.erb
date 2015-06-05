@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="application.css">
 <div class="well">
   <div class="row">
     <div class="col-md-7">
@@ -25,20 +24,22 @@
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-heading">
+
 					<h3 style="font-family:verdana; font-weight:700" class="panel-title">
 						<span class="glyphicons glyphicons-cat"></span>
 						<%= link_to post.title, post_url(post.id),  :method => 'get'%>
 						<h6><%= link_to User.where(:id=>post.user_id).pluck("user_name")[0], user_url(post.user_id),
-                                                                                 :class=>"blackColor" %></h6>
+                                        :class=>"blackColor" %></h6>
 						<h6 style="color:darkgray;font-family:verdana" ><%= post.date %></h6>
                     </h3>
+
 					<% if session["user_id"].to_i == post.user_id %>
                         <p><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         <span class="glyphicon-class"><%= link_to "(delete)", post_url(post.id), :method => 'delete' %></h5>
                         </span></p>
 					<% end %>
-			</div>
-				<!--<div class="panel-body"><%= post.body %></div>-->
+
+			    </div>
 			</div> 
 		</div>
 		<div class="col-md-4"></div>

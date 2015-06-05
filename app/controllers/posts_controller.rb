@@ -2,13 +2,18 @@ class PostsController < ApplicationController
 
  before_action :find_post, :only => [:show, :edit, :update, :destroy]
  before_action :require_user, :only => [:new, :edit, :update, :edit, :destroy]
- 
+
  def find_post
  	@post = Post.find_by(id: params[:id])
  end
- 	
+
  def index
-	@posts = Post.all.limit(1000).order('date desc').page(params[:page]).per(5)
+   if params["keyword"].present?
+     @posts = Post.where("body LIKE ? or title LIKE ?", "%#{params[:keyword]}%","%#{params[:keyword]}%")
+                  .limit(1000).order('date desc').page(params[:page]).per(5)
+   else
+     @posts = Post.all.limit(1000).order('date desc').page(params[:page]).per(5)
+   end
  end
 
  def show
@@ -16,7 +21,7 @@ class PostsController < ApplicationController
  	@user_id = session["user_id"] 
 	if @post == nil
 		redirect to posts_url
-	end
+    end
  end
 
  def require_user
@@ -41,7 +46,8 @@ class PostsController < ApplicationController
 		redirect_to post_url(@post.id)
 	else 
 		render 'new'
-	end
+  end
+
  end
  			
  def edit

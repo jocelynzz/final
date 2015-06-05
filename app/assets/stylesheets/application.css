@@ -49,6 +49,18 @@ body {
     font-family: Verdana;
 }
 
+.btn-default {
+    line-height: 12px;
+    background-color: #218C8D;
+    color: white;
+    border-color: #218C8D;
+
+}
+
+.btn-default:focus {
+    backgroud-color: #ffcc66;
+}
+
 .btn-large {
     padding: 18px 28px;
     font-size: 15px;
@@ -78,6 +90,8 @@ body {
     color: white;
 }
 
+
+
 .navbar-default {
     background-color: #66cccc;
     border:#66cccc ;
@@ -95,4 +109,7 @@ body {
     background-color: #ffcc66;
 }
 
+.active {
+    background-color: #ffcc66;
+}
 

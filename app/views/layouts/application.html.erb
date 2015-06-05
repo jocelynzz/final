@@ -26,29 +26,49 @@
 		    <a class="navbar-brand" href="/">
 		        <%= image_tag("cat.png", :alt => "Brand")%>
             </a>
-            <ul class ="nav navbar-nav changeFont">
+
+            <ul class ="nav navbar-nav <%= @page_id == "posts" ? "active" : "" %>">
 				<%= link_to ("WELCOME, " + User.find_by(id: session["user_id"]).user_name), posts_user_url(id: session["user_id"]),:class=>"navbar-brand changeFontBig"%>
             </ul>
-            <ul class ="nav navbar-nav changeFont">
-                <%= link_to "MY PROFILE", user_url(User.find_by(id: session["user_id"])), :class=>"navbar-brand changeFont" %>
-            </ul>
-            <ul class ="nav navbar-nav changeFont">
+
+            <% if @user.nil? or session["user_id"].to_i.equal?(@user.id)  %>
+                <ul class ="nav navbar-nav <%= @page_id == "profile" ? "active" : "" %>">
+                    <%= link_to "MY PROFILE", user_url(User.find_by(id: session["user_id"])), :class=>"navbar-brand changeFont" %>
+                </ul>
+            <% else %>
+                <ul class ="nav navbar-nav">
+                    <%= link_to "MY PROFILE", user_url(User.find_by(id: session["user_id"])), :class=>"navbar-brand changeFont" %>
+                </ul>
+            <% end %>
+
+            <ul class ="nav navbar-nav <%= @page_id == "friends_posts" ? "active" : "" %>">
               <%= link_to "FRIENDS' MEOWS", meows_user_url(id: session["user_id"]), :class=>"navbar-brand changeFont" %>
             </ul>
-			<div class="container-fluid">
-			    <ul class="nav navbar-nav navbar-right">
-				    <%= link_to "Sign Out", '/signout', :class => "navbar-brand changeFont"%>
-                </ul>
-            </div>
+
+            <ul class="nav navbar-nav changeFont">
+                <%= link_to "Sign Out", '/signout', :class => "navbar-brand changeFont"%>
+            </ul>
+
+            <ul class="nav navbar-nav"></ul>
+                <%= form_tag posts_url, :method => "get", :class => "navbar-form navbar-right" do %>
+                  <div class="form-group">
+                    <%= text_field_tag :keyword %>
+                  </div>
+                   <%= submit_tag "Search", :class =>"btn btn-default" %>
+                <% end %>
+            </ul>
+
 	    <% else %>
 		    <a class="navbar-brand">
 		        <%= image_tag("cat.png", :alt => "Brand")%>
 				<%= link_to "MEOW Blog", '/', :class => "navbar-brand changeFontBig" %>
 		    </a>
+
             <ul class ="nav navbar-nav changeFont">
 				<%= link_to "Sign Up", '/signup', :class => "navbar-brand changeFont"%>
              </ul>
-           <ul class ="nav navbar-nav changeFont">
+
+            <ul class ="nav navbar-nav changeFont">
 				<%= link_to link_to "Sign In", '/login', :class => "navbar-brand changeFont"%>
 			</ul>
           <% end %>

@@ -4,6 +4,7 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <%= form_tag "/posts" do %>
+
       <p>
       <label>Title:</label> <input name="title" size=30>
       </p>
@@ -11,7 +12,7 @@
         <%= text_area_tag :body, "", :class => "tinymce", :rows => 45, :cols => 50 %>
         <%= tinymce %>
 
-      <p><button style="margin-top:10px; background-color:#218C8D" class="btn btn-small">Submit</button></p>
+      <button style="margin-top:10px; background-color:#218C8D" class="btn btn-small">Submit</button>
     <% end %>
   </div>
   <div class="col-md-1"></div>

@@ -12,13 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
-//= require tinymce
-
-tinyMCE.init({
-  mode: 'textareas',
-  theme: 'modern',
-  fontsize_formats: "8pt 9pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt"
-});
+//tinyMCE.init({
+//  mode: 'textareas',
+//  theme: 'modern',
+//  fontsize_formats: "8pt 9pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt",
+  //init_instance_callback : function(editor) {
+  //  var currentEditor = editor.editorContainer;
+  //  $(currentEditor).show();
+  //}
+//});
+//if (tinymce.editors.length>0) {
+//    tinymce.execCommand('mceFocus', true, txt_area_id);
+//    tinymce.execCommand('mceRemoveEditor',true, txt_area_id);
+//    tinymce.execCommand('mceAddEditor',true, txt_area_id);
+//}

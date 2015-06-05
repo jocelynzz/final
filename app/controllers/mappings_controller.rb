@@ -2,6 +2,7 @@ class MappingsController < ApplicationController
 
 def create
 	array = params["category_ids"]
+
 	if array.nil?
 		redirect_to "/posts/#{params["post_id"]}"
 	else
@@ -13,6 +14,6 @@ def create
 		}
 		redirect_to "/posts/#{params["post_id"]}"
 	end
+end
 
- end
 end
