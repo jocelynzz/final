@@ -9,7 +9,7 @@ Descriptions of this blog:
 
 * Only account holder can see email address on file. S/he cannot see the follow/unfollow button on his/her profile page
 
-* I refer to this website for the development of follow/unfollow relationships between users: https://www.railstutorial.org/book/following_users
+* I refer to this webpage for the development of follow/unfollow relationships between users: https://www.railstutorial.org/book/following_users
 
 * I use tinymce rails version to implement the rich-text editor: https://github.com/spohlenz/tinymce-rails
 
