@@ -50,22 +50,4 @@ class UsersController < ApplicationController
 
   end
 
-  def posts
-
-    @page_id = "posts"
-    @posts = @user.posts.order('date desc').page(params[:page]).per(10)
-    #change from root_url to posts/index.html because Kaminari threw errors
-    render "posts/index.html"
-
-  end
-
-  def friends_posts
-
-    @page_id = "friends_posts"
-    @users = @user.followings
-    @posts = Post.where(:user_id => @users.pluck("id")).order('date desc').page(params[:page]).per(10)
-    render "posts/index.html"
-
-  end
-  			
 end

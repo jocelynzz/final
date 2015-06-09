@@ -42,7 +42,7 @@
             <% end %>
 
             <ul class ="nav navbar-nav <%= @page_id == "friends_posts" ? "active" : "" %>">
-              <%= link_to "FRIENDS' MEOWS", meows_user_url(id: session["user_id"]), :class=>"navbar-brand changeFont" %>
+              <%= link_to "FRIENDS' MEOWS", posts_friends_user_url(id: session["user_id"]), :class=>"navbar-brand changeFont" %>
             </ul>
 
             <ul class="nav navbar-nav changeFont">

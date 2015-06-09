@@ -20,8 +20,8 @@ Rails.application.routes.draw do
     member do
       get '/following' => 'users#following'
       get '/followers' => 'users#followers'
-      get '/posts' => 'users#posts'
-      get '/meows' => 'users#friends_posts'
+      get '/posts' => 'posts#index'
+      get '/posts/friends' => 'posts#index'
     end
   end
   resources :relations

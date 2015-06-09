@@ -8,11 +8,32 @@ class PostsController < ApplicationController
  end
 
  def index
+
+   # search bar
    if params["keyword"].present?
      @posts = Post.where("body LIKE ? or title LIKE ?", "%#{params[:keyword]}%","%#{params[:keyword]}%")
                   .limit(1000).order('date desc').page(params[:page]).per(5)
+
    else
-     @posts = Post.all.limit(1000).order('date desc').page(params[:page]).per(5)
+
+     if params[:id].present?
+       @user = User.find_by(id: session[:user_id])
+       @url_path = request.original_url.to_s;
+
+       # show friends' posts
+       if @url_path.include?"friends"
+         @users = @user.followings
+         @posts = Post.where(:user_id => @users.pluck("id")).order('date desc').page(params[:page]).per(5)
+       else
+       # only show the signed in user's posts
+         @page_id = "posts"
+         @posts = @user.posts.order('date desc').page(params[:page]).per(5)
+       end
+       # home page shows all users' posts
+     else
+       @posts = Post.all.limit(1000).order('date desc').page(params[:page]).per(5)
+     end
+
    end
  end
 
@@ -67,6 +88,15 @@ class PostsController < ApplicationController
  def destroy
     @post.delete
     redirect_to posts_url
+ end
+
+ def get_friends
+   @page_id = "friends_posts"
+   @user = User.find_by(id: params[:id])
+   @users = @user.followings
+   @posts = Post.where(:user_id => @users.pluck("id")).order('date desc').page(params[:page]).per(5)
+   render posts_url
+
  end
  
 end
