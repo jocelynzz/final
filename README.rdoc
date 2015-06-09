@@ -15,7 +15,7 @@ Descriptions of this blog:
 
 * Two users adminMeow and jocelyn are created in the seed file for testing and grading
 
-* I mainly use CSS and Bootstrap grids and components for the layout of the webpage. 
+* I mainly use CSS and Bootstrap grids and components for the layout of webpages
 
 * I refer to this webpage for the development of follow/unfollow relationships between users: https://www.railstutorial.org/book/following_users
 
