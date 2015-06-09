@@ -8,20 +8,19 @@ class PostsController < ApplicationController
  end
 
  def index
-
    # search bar
    if params["keyword"].present?
      @posts = Post.where("body LIKE ? or title LIKE ?", "%#{params[:keyword]}%","%#{params[:keyword]}%")
                   .limit(1000).order('date desc').page(params[:page]).per(5)
 
    else
-
      if params[:id].present?
        @user = User.find_by(id: session[:user_id])
        @url_path = request.original_url.to_s;
 
        # show friends' posts
        if @url_path.include?"friends"
+         @page_id = "friends_posts"
          @users = @user.followings
          @posts = Post.where(:user_id => @users.pluck("id")).order('date desc').page(params[:page]).per(5)
        else
@@ -33,7 +32,6 @@ class PostsController < ApplicationController
      else
        @posts = Post.all.limit(1000).order('date desc').page(params[:page]).per(5)
      end
-
    end
  end
 
