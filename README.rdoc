@@ -3,13 +3,13 @@
 Descriptions of this blog:
 * cat icon is a brand, which directs to the home page, where you can see ALL posts from ALL users
 
-* Welcome link directs to the current signed-in user's posts
+* WELCOME link directs to the current signed-in user's posts
 
-* My profile shows the user's information(follower, following, posts, email, bio and profile picture)
+* MY PROFILE shows the user's information(follower, following, posts, email, bio and profile picture)
 
 * Only account holder can see email address on file. S/he cannot see the follow/unfollow button on his/her profile page, as one cannot follow/unfollow him/herself
 
-* Friends' meows displays posts from people you follow
+* FRIENDS MEOWS displays posts from people you follow
 
 * All the user names on the weg pages are links, which direct you to the user's profile page. One can follow or unfollow this user and see his or her posts
 
