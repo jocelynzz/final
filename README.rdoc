@@ -7,9 +7,15 @@ Descriptions of this blog:
 
 * My profile shows the user's information(follower, following, posts, email, bio and profile picture)
 
-* Only account holder can see email address on file. S/he cannot see the follow/unfollow button on his/her profile page)
+* Only account holder can see email address on file. S/he cannot see the follow/unfollow button on his/her profile page, as one cannot follow/unfollow him/herself
 
 * Friends' meows displays posts from people you follow
+
+* All the user names on the weg pages are links, which direct you to the user's profile page. One can follow or unfollow this user and see his or her posts
+
+* Two users adminMeow and jocelyn are created in the seed file for testing and grading
+
+* I mainly use CSS and Bootstrap grids and components for the layout of the webpage. 
 
 * I refer to this webpage for the development of follow/unfollow relationships between users: https://www.railstutorial.org/book/following_users
 
