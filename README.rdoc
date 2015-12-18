@@ -1,6 +1,27 @@
-== README
+== Introduction
+This is a Ruby-on-Rails full stack web application. It is a blog for cat lovers. 
 
-Descriptions of this blog:
+Please follow the steps to run the app, thank you:
+
+1. bundle install
+
+2. rake db:setup
+
+3. rake db:migrate
+
+4. rails server -p {port number}
+
+== Features
+* Register, Login/Logout
+
+* Post, edit, delete and categorize a blog
+
+* view blogs
+
+* follow/unfollow other users
+
+== More Descriptions of this blog:
+
 * cat icon is a brand, which directs to the home page, where you can see ALL posts from ALL users
 
 * WELCOME link directs to the current signed-in user's posts
@@ -22,6 +43,18 @@ Descriptions of this blog:
 * I use tinymce rails version to implement the rich-text editor: https://github.com/spohlenz/tinymce-rails
 
 * I use Kaminari, recommendated by the professor, for pagination: https://github.com/amatsuda/kaminari
+
+== Some Best Practice
+
+* Database query limits imposed to make the App scalable.
+
+* SQL injection attach protection implemented when searching for a blog.
+
+* Secure passwords with encryption
+
+* pagniation using gem
+
+* Proper authorization to protect user privacy
 
 
 <tt>rake doc:app</tt>.
