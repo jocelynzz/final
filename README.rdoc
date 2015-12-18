@@ -46,13 +46,13 @@ Please follow the steps to run the app, thank you:
 
 == Some Best Practices
 
-* Database query limits imposed to make the App scalable.
+* Database query limits imposed to make the App scalable
 
-* SQL injection attach protection implemented when searching for a blog.
+* SQL injection attach protection implemented when searching for a blog
 
 * Secure passwords with encryption
 
-* pagniation using gem
+* Pagniation 
 
 * Proper authorization to protect user privacy
 
