@@ -44,7 +44,7 @@ Please follow the steps to run the app, thank you:
 
 * I use Kaminari, recommendated by the professor, for pagination: https://github.com/amatsuda/kaminari
 
-== Some Best Practice
+== Some Best Practices
 
 * Database query limits imposed to make the App scalable.
 
